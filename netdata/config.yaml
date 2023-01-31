@@ -3,7 +3,7 @@ name: Netdata
 version: "2.1.2"
 slug: netdata
 description: Netdata - Monitor everything in real time
-url: "https://github.com/Gamma-Software/netdata-homeassistant-addon"
+url: "https://github.com/packruler/netdata-homeassistant-addon"
 arch:
   - armhf
   - armv7
@@ -16,7 +16,6 @@ panel_title: Netdata
 ingress: true
 ingress_port: 19999
 journald: true
-apparmor: unconfined
 privileged:
   - SYS_PTRACE
 options:
