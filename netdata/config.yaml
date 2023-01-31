@@ -1,6 +1,6 @@
 # https://developers.home-assistant.io/docs/add-ons/configuration#add-on-config
 name: Netdata
-version: "2.1.1"
+version: "2.1.2"
 slug: netdata
 description: Netdata - Monitor everything in real time
 url: "https://github.com/Gamma-Software/netdata-homeassistant-addon"
@@ -16,6 +16,7 @@ panel_title: Netdata
 ingress: true
 ingress_port: 19999
 journald: true
+apparmor: unconfined
 privileged:
   - SYS_PTRACE
 options:
@@ -38,4 +39,4 @@ schema:
   claim_token: str
   claim_rooms:
     - str
-image: "ghcr.io/gamma-software/{arch}-netdata-homeassistant-addon"
+image: "ghcr.io/packruler/{arch}-netdata-homeassistant-addon"

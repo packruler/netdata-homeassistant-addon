@@ -1,6 +1,6 @@
 ARG BUILD_FROM
 FROM $BUILD_FROM
-LABEL maintainer="valentin.rudloff.perso@gmail.com"
+LABEL maintainer="packruler"
 
 EXPOSE 19999
 
@@ -10,8 +10,13 @@ RUN apk update &&\
 
 # Execute during the build of the image
 RUN curl https://my-netdata.io/kickstart.sh > /tmp/netdata-kickstart.sh && \
-    sh /tmp/netdata-kickstart.sh --no-updates --stable-channel \
-    --disable-telemetry --dont-start-it --non-interactive
+  sh /tmp/netdata-kickstart.sh \
+  --no-updates \
+  --stable-channel \ 
+  --disable-telemetry \
+  --dont-start-it \
+  --non-interactive \
+  --install-version 1.37.1
 
 # Copy data for add-on
 COPY rootfs /

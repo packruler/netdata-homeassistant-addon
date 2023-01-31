@@ -1,14 +1,25 @@
 {
   "name": "Netada Home Assistant add-on repository",
   "image": "ghcr.io/home-assistant/devcontainer:addons",
-  "appPort": ["19999:19999"],
+  "appPort": [
+    "19999:19999"
+  ],
   "postStartCommand": "bash devcontainer_bootstrap",
-  "runArgs": ["-e", "GIT_EDITOR=code --wait", "--privileged"],
+  "runArgs": [
+    "-e",
+    "GIT_EDITOR=code --wait",
+    "--privileged"
+  ],
   "containerEnv": {
     "WORKSPACE_DIRECTORY": "${containerWorkspaceFolder}"
   },
-  "extensions": ["timonwong.shellcheck", "esbenp.prettier-vscode"],
-  "mounts": ["type=volume,target=/var/lib/docker"],
+  "extensions": [
+    "timonwong.shellcheck",
+    "esbenp.prettier-vscode"
+  ],
+  "mounts": [
+    "type=volume,target=/var/lib/docker"
+  ],
   "settings": {
     "terminal.integrated.profiles.linux": {
       "zsh": {
