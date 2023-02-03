@@ -14,9 +14,11 @@ RUN curl https://my-netdata.io/kickstart.sh > /tmp/netdata-kickstart.sh && \
   --no-updates \
   --stable-channel \ 
   --disable-telemetry \
-  --dont-start-it \
   --non-interactive \
   --install-version 1.37.1
+
+COPY ./cloud.conf /opt/netdata/etc/netdata/netdata.conf
+COPY ./cloud.conf /opt/netdata/var/lib/netdata/cloud.d/cloud.conf
 
 # Copy data for add-on
 COPY rootfs /

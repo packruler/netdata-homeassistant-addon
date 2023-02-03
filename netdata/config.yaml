@@ -1,6 +1,6 @@
 # https://developers.home-assistant.io/docs/add-ons/configuration#add-on-config
 name: Netdata
-version: "2.1.2"
+version: "2.1.2-4"
 slug: netdata
 description: Netdata - Monitor everything in real time
 url: "https://github.com/packruler/netdata-homeassistant-addon"
@@ -16,6 +16,7 @@ panel_title: Netdata
 ingress: true
 ingress_port: 19999
 journald: true
+docker_api: true
 privileged:
   - SYS_PTRACE
 options:
@@ -25,9 +26,8 @@ options:
   enable_alarm: true
   enable_log: true
   claim_url: https://app.netdata.cloud
-  claim_token: xxxxxxxxxxxxxxxxxxxxxxx
-  claim_rooms:
-    - ROOM
+  claim_token: ""
+  claim_rooms: ""
 schema:
   hostname: str
   page_cache_size: int
@@ -35,7 +35,6 @@ schema:
   enable_alarm: bool
   enable_log: bool
   claim_url: str
-  claim_token: str
-  claim_rooms:
-    - str
-image: "ghcr.io/packruler/{arch}-netdata-homeassistant-addon"
+  claim_token: "str?"
+  claim_rooms: "str?"
+# image: "ghcr.io/packruler/{arch}-netdata-homeassistant-addon"
