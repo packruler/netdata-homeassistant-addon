@@ -9,7 +9,6 @@ if [ ! -e "/data/netdata/netdata.conf" ]; then
 fi
 
 /opt/netdata/bin/netdata -d -p 19999 -c /data/netdata/netdata.conf & sleep 2
-mkdir -p /data/netdata
 curl -so /data/netdata/netdata.conf http://localhost:19999/netdata.conf
 pkill -9 netdata
 

@@ -43,9 +43,9 @@ if [ -n "${NETDATA_CLOUD_TOKEN}" ]; then
     # cat /etc/netdata/netdata.conf
     
     bashio::log.info "Starting Netdata..."
-    command=$(IFS=" " ; echo "${command[*]}")
-    command=("-W \"claim $command\"")
-    # /opt/netdata/bin/netdata -p 19999 -D -W "claim ${command[@]}" -W aclk-state -c /data/netdata/netdata.conf 
+    # command=$(IFS=" " ; echo "${command[*]}")
+    # command=("-W \"claim ${command[*]}\"")
+    /opt/netdata/bin/netdata -p 19999 -D -W "claim ${command[@]}" -c /data/netdata/netdata.conf 
     bashio::log.info "/data/netdata"
 
     bashio::log.info "Done handling claim updates"
@@ -55,6 +55,6 @@ else
   bashio::log.info "No claim token provided"
 fi
 
-echo "${command[@]}" > /data/existing.conf
+# echo "${command[@]}" > /data/existing.conf
 
-$(IFS=" " ; echo "${command[*]}")
+# $(IFS=" " ; echo "${command[*]}")
